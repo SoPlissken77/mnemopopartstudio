@@ -1,0 +1,151 @@
+---
+import LayoutMain from '../layouts/LayoutMain.astro';
+
+const pillars = [
+  { code: '01', title: 'Analyse de corpus', href: '/services' },
+  { code: '02', title: 'Culture visuelle & Médias', href: '/services' },
+  { code: '03', title: 'Rédaction & Conseil éditorial', href: '/services' },
+  { code: '04', title: "Valorisation de fonds d'archives", href: '/services' },
+  { code: '05', title: 'Ghostwriting spécialisé', href: '/services' },
+  { code: '06', title: 'Formation & Ateliers', href: '/services' },
+];
+---
+
+<LayoutMain title="MNEMOPOP Art Studio | Expertise scientifique & Patrimoine visuel">
+  <section class="space-y-16 py-4">
+    
+    <!-- EN-TÊTE MANIFESTE -->
+    <div class="border-b border-stone-300 pb-10 space-y-6">
+      <div class="inline-block bg-amber-800 text-white font-mono text-[10px] uppercase tracking-widest px-3 py-1">
+        Plate-forme d'analyse & Création
+      </div>
+      
+      <!-- Titre principal hybride -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-normal text-stone-900 leading-tight max-w-4xl">
+        <span class="block mb-3">
+          <span class="font-bifur text-3xl sm:text-4xl md:text-5xl uppercase tracking-wider">
+            MNEMOPOP
+          </span>
+          <span class="font-serif italic text-2xl sm:text-3xl md:text-4xl text-amber-900 ml-2">
+            Art Studio <br> L'expertise scientifique au service du patrimoine visuel
+          </span>
+        </span>
+      </h1>
+
+      <!-- Paragraphe 1 -->
+      <p class="text-base text-stone-700 leading-relaxed font-sans max-w-3xl">
+        <span class="font-bifur text-sm text-stone-900 uppercase tracking-wider">MNEMOPOP</span> 
+        <span class="font-serif italic text-amber-900 text-base">Art Studio</span> 
+        est une plate-forme d'analyse et de création dédiée à la culture visuelle. Situé à la croisée de l'histoire de l'art, des <span class="italic">visual studies</span> et de l'étude des médias, nous vous accompagnons dans l'exploration et l'analyse de vos productions visuelles (Beaux-Arts, imagerie populaire, dessin de presse, caricature, bande dessinée, affiche, jeux-vidéos, clip, médias numériques, etc.).
+      </p>
+
+      <!-- Paragraphe 2 -->
+      <p class="text-base text-stone-700 leading-relaxed font-sans max-w-3xl">
+        Forte d’une expertise scientifique reconnue en histoire de l’art et en culture visuelle, notre structure accompagne les institutions, professionnels et acteurs culturels dans la découverte, l’analyse et la valorisation de leur patrimoine imagé.
+      </p>
+
+      <!-- Paragraphe 3 -->
+      <p class="text-base text-stone-700 leading-relaxed font-sans max-w-3xl">
+        Notre accompagnement s’applique à une diversité de projets et de besoins : patrimoine iconographique, projets culturels et éditoriaux, dispositifs éducatifs, demandes journalistiques, ainsi qu’analyse et valorisation de fonds d’archives.
+      </p>
+
+      <!-- Paragraphe 4 -->
+      <p class="text-base text-stone-700 leading-relaxed font-sans max-w-3xl">
+        Notre approche transdisciplinaire mobilise des compétences complémentaires et originales pour accompagner la conception et la conduite de vos projets de recherche, institutionnels ou patrimoniaux.
+      </p>
+
+      <!-- Boutons d'action -->
+      <div class="flex flex-wrap gap-4 pt-4">
+        <a href="/services" class="bg-stone-900 text-stone-100 text-xs font-mono uppercase tracking-widest px-5 py-3 hover:bg-amber-700 transition-colors">
+          Découvrir nos services →
+        </a>
+        <a href="/contacts" class="border border-stone-900 text-stone-900 text-xs font-mono uppercase tracking-widest px-5 py-3 hover:bg-stone-900 hover:text-white transition-colors">
+          Demander une expertise
+        </a>
+      </div>
+    </div>
+
+    <!-- MISE EN AVANT PARUTION -->
+    <div class="bg-stone-900 text-stone-100 p-8 border-l-4 border-amber-600 space-y-4">
+      <div class="flex justify-between items-center text-xs font-mono text-amber-400 uppercase tracking-widest">
+        <span>Ouvrage de référence</span>
+        <span>Parution 2026</span>
+      </div>
+      
+      <div class="space-y-2">
+        <h2 class="font-serif text-2xl md:text-3xl font-bold leading-snug text-white">
+          <a 
+            href="https://purh.univ-rouen.fr/catalogue/livres/le-rire-colonial-9791024019543.html" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="hover:text-amber-400 transition-colors duration-200"
+          >
+            Le rire colonial | La presse satirique illustrée face à la colonisation (1830-1990)
+          </a>
+        </h2>
+        <p class="text-xs font-mono text-stone-400">
+          Sofiane Taouchichet — Presses universitaires de Rouen et du Havre, coll. « Charivari »
+        </p>
+      </div>
+
+      <p class="text-xs text-stone-300 leading-relaxed max-w-3xl">
+        Une étude riche sur la presse satirique illustrée, l'iconographie coloniale et la circulation des stéréotypes dans la culture visuelle.
+      </p>
+
+      <div class="pt-2 flex flex-wrap gap-6 items-center">
+        <https://purh.univ-rouen.fr/catalogue/livres/le-rire-colonial-9791024019543.html -->
+        <a 
+          href="https://purh.univ-rouen.fr/catalogue/livres/le-rire-colonial-9791024019543.html"
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-block text-xs font-mono text-amber-400 hover:text-amber-300 uppercase tracking-widest underline"
+        >
+          Commander / Consulter la fiche éditeur ↗
+        </a>
+
+        <!-- Lien interne vers la page travaux & publications du site -->
+        <a 
+          href="/publications" 
+          class="inline-block text-xs font-mono text-stone-400 hover:text-stone-200 uppercase tracking-widest underline"
+        >
+          Voir toutes les publications →
+        </a>
+      </div>
+    </div>
+
+    <!-- APERÇU DES 6 PILIERS D'EXPERTISE -->
+    <div class="space-y-6">
+      <div class="border-b border-stone-200 pb-2 flex justify-between items-baseline">
+        <h2 class="font-serif text-xl font-bold text-stone-900">Piliers d'intervention</h2>
+        <a href="/services" class="text-xs font-mono uppercase tracking-widest text-amber-800 hover:underline">
+          Voir l'offre détaillée →
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {pillars.map((p) => (
+          <a href={p.href} class="bg-white border border-stone-200 p-5 hover:border-amber-600/50 transition-colors flex justify-between items-center group">
+            <span class="font-mono text-xs text-amber-800 font-bold">{p.code}</span>
+            <span class="font-serif font-bold text-stone-900 text-sm group-hover:text-amber-800 transition-colors">{p.title}</span>
+            <span class="text-stone-400 group-hover:text-amber-800 transition-colors">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- DIRECTION SCIENTIFIQUE -->
+    <div class="bg-stone-50 border border-stone-200 p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      <div class="space-y-2 max-w-2xl">
+        <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold">Direction scientifique</span>
+        <h3 class="font-serif text-lg font-bold text-stone-900">Sofiane Taouchichet, PhD</h3>
+        <p class="text-xs text-stone-600 leading-relaxed">
+          Docteur en histoire de l'art et qualifié aux fonctions de maître de conférences, spécialiste de la presse satirique, de la caricature et de l'iconographie politique des XIXᵉ et XXᵉ siècles.
+        </p>
+      </div>
+      <a href="/studio" class="inline-block bg-stone-900 text-stone-100 text-[11px] font-mono uppercase tracking-widest px-4 py-2 hover:bg-amber-700 transition-colors shrink-0">
+        En savoir plus →
+      </a>
+    </div>
+
+  </section>
+</LayoutMain>

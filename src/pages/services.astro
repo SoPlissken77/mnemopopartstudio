@@ -1,0 +1,112 @@
+---
+import LayoutMain from '../layouts/LayoutMain.astro';
+
+const services = [
+  {
+    code: '01',
+    category: 'Analyse & Corpus',
+    title: 'Recherche & Analyse critique des corpus d\'images',
+    description: 'Dépouillement, contextualisation historique et décodage d\'images et de séries (œuvres d\'art, presse illustrée, caricatures, affiches, archives visuelles).'
+  },
+  {
+    code: '02',
+    category: 'Culture Visuelle',
+    title: 'Analyse des pratiques artistiques, populaires & médiatiques',
+    description: 'Étude des modes de production, de circulation et de réception des images à la croisée des Beaux-Arts, des médias de masse et de la culture populaire.'
+  },
+  {
+    code: '03',
+    category: 'Édition & Recherche',
+    title: 'Rédaction scientifique, vulgarisation & Conseil éditorial',
+    description: 'Production d\'articles de fonds, notices de catalogues, essais et accompagnement scientifique pour des projets éditoriaux ou patrimoniaux.'
+  },
+  {
+    code: '04',
+    category: 'Valorisation',
+    title: 'Valorisation de fonds d\'archives & Patrimoine iconographique',
+    description: 'Conception et production de contenus textuels et visuels destinés à faire rayonner des collections institutionnelles ou privées.'
+  },
+  {
+    code: '05',
+    category: 'Plume & Synthèse',
+    title: 'Ghostwriting & Rédaction spécialisée',
+    description: 'Rédaction sur mesure d\'ouvrages, préfaces, discours ou synthèses complexes nécessitant une plume exigeante et une culture scientifique pointue.'
+  },
+  {
+    code: '06',
+    category: 'Pédagogie',
+    title: 'Formation en Histoire de l\'art & Animation d\'ateliers',
+    description: 'Modules d\'enseignement sur mesure, interventions universitaires, conférences et ateliers de décodage d\'images pour tous publics.'
+  }
+];
+---
+
+<LayoutMain title="Services & Prestations | MNEMOPOP Art Studio">
+  <section id="services" class="space-y-12 py-4">
+    
+    <!-- TITRE DE SECTION -->
+    <div class="border-b border-stone-300 pb-3 flex justify-between items-baseline">
+      <h2 class="text-xl font-serif font-bold text-stone-900">Services & Prestations</h2>
+      <span class="text-xs font-mono uppercase tracking-widest text-amber-800">Offre d'expertise</span>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <p class="text-sm text-stone-700 leading-relaxed font-sans max-w-3xl">
+      <span class="font-bifur text-xs text-stone-900 uppercase tracking-wider">MNEMOPOP</span> 
+      <span class="font-serif italic text-amber-800 text-sm">Art Studio</span> 
+      met l'exigence de la recherche universitaire au service des institutions, éditeurs, collectionneurs et acteurs culturels. Nos prestations s'articulent autour de six grands axes d'intervention.
+    </p>
+
+    <!-- GRILLE DES 6 SERVICES (2 COLONNES DE 3 / 3 COLONNES SUR GRAND ÉCRAN) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {services.map((item) => (
+        <div class="bg-white border border-stone-200 p-6 flex flex-col justify-between hover:border-amber-600/50 transition-colors">
+          <div class="space-y-3">
+            <div class="flex justify-between items-center border-b border-stone-100 pb-2">
+              <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold">{item.code} — {item.category}</span>
+            </div>
+            <h3 class="font-serif text-base font-bold text-stone-900 leading-snug">
+              {item.title}
+            </h3>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- MÉTHODOLOGIE & LIVRABLES -->
+    <div class="bg-stone-50 border border-stone-200 p-8 space-y-6">
+      <div class="border-b border-stone-200 pb-2">
+        <h3 class="font-serif text-base font-bold text-stone-900">Modalités d'accompagnement</h3>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-xs text-stone-700">
+        <div>
+          <strong class="font-mono uppercase tracking-widest text-[10px] text-amber-800 block mb-1">1. Diagnostic & Cadrage</strong>
+          <p class="leading-relaxed">Évaluation des corpus, définition des objectifs scientifiques ou éditoriaux et établissement de la feuille de route.</p>
+        </div>
+        <div>
+          <strong class="font-mono uppercase tracking-widest text-[10px] text-amber-800 block mb-1">2. Recherche & Rédaction</strong>
+          <p class="leading-relaxed">Travail sur pièces, analyse iconographique, dépouillement d'archives et production des textes ou rapports.</p>
+        </div>
+        <div>
+          <strong class="font-mono uppercase tracking-widest text-[10px] text-amber-800 block mb-1">3. Restitution & Transmission</strong>
+          <p class="leading-relaxed">Livraison des manuscrits, fichiers structurés, interventions oralisées ou animation des sessions de formation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOC D'APPEL À L'ACTION -->
+    <div class="border border-stone-900 p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white">
+      <div>
+        <h4 class="font-serif font-bold text-stone-900 text-sm">Un projet spécifique ou une étude sur mesure ?</h4>
+        <p class="text-xs text-stone-600 mt-0.5">Nous élaborons des propositions d'accompagnement adaptées à vos besoins éditoriaux, académiques ou patrimoniaux.</p>
+      </div>
+      <a href="/contacts" class="inline-block bg-stone-900 text-stone-100 text-[11px] font-mono uppercase tracking-widest px-4 py-2 hover:bg-amber-700 transition-colors shrink-0">
+        Prendre contact →
+      </a>
+    </div>
+
+  </section>
+</LayoutMain>

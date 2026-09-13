@@ -1,0 +1,146 @@
+---
+import LayoutMain from '../layouts/LayoutMain.astro';
+---
+
+<LayoutMain title="Contacts | MNEMOPOP Art Studio">
+  <section id="contacts" class="space-y-12 py-4">
+    
+    <!-- TITRE DE SECTION -->
+    <div class="border-b border-stone-300 pb-3 flex justify-between items-baseline">
+      <h2 class="text-xl font-serif font-bold text-stone-900">Contacts & Échanges</h2>
+      <span class="text-xs font-mono uppercase tracking-widest text-amber-800">Prise de contact</span>
+    </div>
+
+    <!-- GRILLE CONTACT & FORMULAIRE -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-start">
+      
+      <!-- COORDONNÉES & INFORMATIONS -->
+      <div class="space-y-6 text-xs text-stone-700">
+        <div>
+          <h3 class="font-serif text-base font-bold text-stone-900 mb-2">MNEMOPOP Art Studio</h3>
+          <p class="leading-relaxed text-stone-600">
+            Cabinet d'expertise en histoire de l'art, culture populaire et culture visuelle.
+          </p>
+        </div>
+
+        <div class="space-y-3 pt-2 border-t border-stone-200">
+          <div>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold block mb-1">Localisation</span>
+            <p class="font-mono text-stone-800">Strasbourg, France</p>
+          </div>
+
+          <div>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold block mb-1">Courrier électronique</span>
+            <a href="mailto:contact@mnemopop.fr" class="font-mono text-stone-900 underline hover:text-amber-700 transition-colors">
+              contact@mnemopop.fr
+            </a>
+          </div>
+
+          <div>
+            <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold block mb-1">Domaines d'intervention</span>
+            <p class="text-stone-600 leading-relaxed">
+              Institutions culturelles, musées, maisons d'édition, laboratoires de recherche et collections privées.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-stone-50 border border-stone-200 p-4 space-y-2">
+          <span class="font-mono text-[10px] uppercase tracking-widest text-stone-500 block">Projets sur mesure</span>
+          <p class="text-stone-600 leading-relaxed">
+            Interventions sur devis pour expertises, rédaction scientifique, conférences ou ateliers.
+          </p>
+        </div>
+      </div>
+
+      <!-- FORMULAIRE DE CONTACT -->
+      <div class="md:col-span-2 bg-white border border-stone-200 p-8">
+        <h3 class="font-serif text-lg font-bold text-stone-900 mb-6 border-b border-stone-100 pb-2">
+          Transmettre une demande
+        </h3>
+
+        <form action="#" method="POST" class="space-y-5 text-xs">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="space-y-1">
+              <label for="nom" class="font-mono text-[10px] uppercase tracking-widest text-stone-600 font-bold">
+                Nom & Prénom *
+              </label>
+              <input 
+                type="text" 
+                id="nom" 
+                name="nom" 
+                required 
+                class="w-full border border-stone-300 p-2.5 focus:outline-none focus:border-stone-900 font-sans"
+              />
+            </div>
+
+            <div class="space-y-1">
+              <label for="institution" class="font-mono text-[10px] uppercase tracking-widest text-stone-600 font-bold">
+                Institution / Structure
+              </label>
+              <input 
+                type="text" 
+                id="institution" 
+                name="institution" 
+                class="w-full border border-stone-300 p-2.5 focus:outline-none focus:border-stone-900 font-sans"
+              />
+            </div>
+          </div>
+
+          <div class="space-y-1">
+            <label for="email" class="font-mono text-[10px] uppercase tracking-widest text-stone-600 font-bold">
+              Adresse e-mail *
+            </label>
+            <input 
+              type="email" 
+              id="email" 
+              name="email" 
+              required 
+              class="w-full border border-stone-300 p-2.5 focus:outline-none focus:border-stone-900 font-sans"
+            />
+          </div>
+
+          <div class="space-y-1">
+            <label for="sujet" class="font-mono text-[10px] uppercase tracking-widest text-stone-600 font-bold">
+              Objet de la demande *
+            </label>
+            <select 
+              id="sujet" 
+              name="sujet" 
+              required 
+              class="w-full border border-stone-300 p-2.5 focus:outline-none focus:border-stone-900 font-sans bg-white"
+            >
+              <option value="">Sélectionnez un domaine...</option>
+              <option value="expertise">Expertise & Inventaire de fonds</option>
+              <option value="recherche">Recherche & Analyse critique</option>
+              <option value="edition">Conseil éditorial & Rédaction</option>
+              <option value="formation">Formation & Atelier</option>
+              <option value="autre">Autre demande</option>
+            </select>
+          </div>
+
+          <div class="space-y-1">
+            <label for="message" class="font-mono text-[10px] uppercase tracking-widest text-stone-600 font-bold">
+              Message *
+            </label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="5" 
+              required 
+              class="w-full border border-stone-300 p-2.5 focus:outline-none focus:border-stone-900 font-sans resize-none"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="bg-stone-900 text-stone-100 text-[11px] font-mono uppercase tracking-widest px-6 py-3 hover:bg-amber-700 transition-colors w-full sm:w-auto"
+          >
+            Envoyer le message →
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </section>
+</LayoutMain>

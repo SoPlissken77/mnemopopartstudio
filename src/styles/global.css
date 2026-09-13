@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Police Bifur pour MNEMOPOP */
+  .font-bifur {
+    font-family: 'Bifur', sans-serif;
+    font-weight: 400 !important;
+    font-synthesis: none; /* Empêche le navigateur de générer du faux gras */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Garamond avec repli classique pour Art Studio */
+  .font-serif {
+    font-family: 'Garamond', 'EB Garamond', 'Cormorant Garamond', Georgia, serif;
+  }
+}

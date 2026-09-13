@@ -1,0 +1,95 @@
+---
+import LayoutMain from '../layouts/LayoutMain.astro';
+---
+
+<LayoutMain title="Qui nous sommes ? | MNEMOPOP Art Studio">
+  <section id="studio" class="space-y-12 py-4">
+    
+    <!-- TITRE DE SECTION -->
+    <div class="border-b border-stone-300 pb-3 flex justify-between items-baseline">
+      <h2 class="text-xl font-serif font-bold text-stone-900">Qui nous sommes ?</h2>
+      <span class="text-xs font-mono uppercase tracking-widest text-amber-800">Direction & Identité</span>
+    </div>
+
+    <!-- GENÈSE & MANIFESTE -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div class="md:col-span-2 space-y-4 text-sm text-stone-700 leading-relaxed font-sans">
+        <h3 class="font-serif text-2xl font-bold text-stone-900">
+          La culture visuelle au regard de la recherche universitaire
+        </h3>
+        <p>
+          <span class="font-bifur text-xs text-stone-900 uppercase tracking-wider">MNEMOPOP</span> 
+          <span class="font-serif italic text-amber-800 text-sm">Art Studio</span> 
+          a été fondé avec l'ambition de créer un pont entre les exigences universaitaires de l'histoire de l'art et la patrimonialisation de la culture visuelle.
+        </p>
+        <p>
+          Conçu comme un laboratoire d'analyse et un cabinet d'expertise, notre expertise explore la mémoire des formes, la circulation des motifs, la sérialité ou encore les représentations médiatiques.
+        </p>
+      </div>
+
+      <!-- CARTOUCHE RECH. & CADRE THEORIQUE -->
+      <div class="bg-stone-50 border border-stone-200 p-6 space-y-4">
+        <h4 class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold border-b border-stone-200 pb-2">
+          Champs d'expertise
+        </h4>
+        <ul class="text-xs text-stone-700 space-y-2 font-mono">
+          <li class="flex items-center gap-2">
+            <span class="text-amber-700">—</span> Histoire de l'art contemporain
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-amber-700">—</span> Culture visuelle & Imprimés
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-amber-700">—</span> Supports sériels & Médias
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-amber-700">—</span> Iconographie Politique & Sociale
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-amber-700">—</span> Culture populaire
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="text-amber-700">—</span> Imageries & Imaginaires
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- DIRECTION SCIENTIFIQUE -->
+    <div class="bg-white border border-stone-200 p-8 space-y-6">
+      <div class="border-b border-stone-200 pb-3 flex justify-between items-baseline">
+        <h3 class="font-serif text-lg font-bold text-stone-900">Direction scientifique</h3>
+        <span class="font-mono text-[10px] uppercase tracking-widest text-stone-500">Fondateur & Chercheur</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 items-start">
+        <div class="space-y-1">
+          <h4 class="font-serif text-base font-bold text-stone-900">Sofiane Taouchichet</h4>
+          <p class="text-xs font-mono text-amber-800">Phd | Docteur en histoire de l'art contemporain (Nanterre/Montréal)</p>
+          <p class="text-[11px] font-mono text-stone-500">Qualifié aux fonctions de maître de conférences</p>
+        </div>
+
+        <div class="md:col-span-3 text-xs text-stone-600 leading-relaxed space-y-3">
+          <p>
+            Spécialiste de l'histoire de l'art contemporain, des représentations populaires, des imaginaires et des supports médiatiques XIXᵉ-XXIᵉ siècles, Sofiane Taouchichet conduit des recherches sur l'histoire des représentations, les cultures médiatiques, les imaginaires politiques et sociaux.
+          </p>
+          <p>
+            Auteur de publications scientifiques et d'ouvrages consacrés à l'histoire de la culture visuelle, il met son expertise théorique et méthodologique à votre service pour accompagner vos projets d'analyse, d'édition et de valorisation documentaire.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BLOC LIEN / CONTACT -->
+    <div class="border border-stone-900 p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-stone-900 text-stone-100">
+      <div>
+        <h4 class="font-serif font-bold text-amber-400 text-sm">Découvrir les travaux et publications</h4>
+        <p class="text-xs text-stone-300 mt-0.5">Consultez la liste des ouvrages, articles et directions scientifiques de nos chercheurs.</p>
+      </div>
+      <a href="/publications" class="inline-block bg-amber-600 text-white text-[11px] font-mono uppercase tracking-widest px-4 py-2 hover:bg-amber-500 transition-colors shrink-0">
+        Voir les publications →
+      </a>
+    </div>
+
+  </section>
+</LayoutMain>

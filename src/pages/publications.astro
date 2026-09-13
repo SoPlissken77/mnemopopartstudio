@@ -1,0 +1,280 @@
+---
+import LayoutMain from '../layouts/LayoutMain.astro';
+
+const monographie = {
+  category: 'Ouvrage scientifique',
+  year: '2026',
+  title: 'Le rire colonial. La presse satirique illustrée face à la colonisation (1830-1990)',
+  authors: 'Sofiane Taouchichet',
+  publisher: 'Presses universitaires de Rouen et du Havre, coll. « Charivari »',
+  type: 'Monographie',
+  url: 'https://purh.univ-rouen.fr/catalogue/livres/le-rire-colonial-9791024019543.html' // Remplace avec l'URL exacte si disponible
+};
+
+const articles = [
+  {
+    year: '2025',
+    title: '« Le Charivari Oranais et Algérien, le malaise identitaire »',
+    journal: 'Ridiculosa, « Identités locales, identités régionales »',
+    number: 'n° 31',
+    pages: 'pp. 197-211',
+    url: 'https://www.eiris.eu/publications-de-leiris/publication-ridiculosa/caricature-et-identites-locales-2/'
+  },
+  {
+    year: '2023',
+    title: '« Sérialiser la satire graphique »',
+    journal: 'in Pascal DUPUY (dir.), Modes de circulation des images entre 1750 et 1848 : Représentation, politique et diffusion',
+    number: 'Actes du colloque de Rouen',
+    publisher: 'Presses universitaires de Rouen et du Havre',
+    pages: 'pp. 49-72',
+    url: 'https://purh.univ-rouen.fr/catalogue/livres/de-la-creation-a-la-confrontation-9791024017273.html'
+  },
+  {
+    year: '2022',
+    title: '« La Débardeuse et son pantalon : une iconographie double, entre sexualisation et domestication »',
+    journal: 'in Damien DELILLE, Isabelle HARE et Stéphanie KUNERT (dir.), Mode et Morale',
+    number: 'Actes du colloque de Lyon',
+    publisher: 'Apparences (En ligne)',
+    url: 'https://journals.openedition.org/apparences/4255' // Exemple de revue en ligne
+  },
+  {
+    year: '2022',
+    title: '« Les représentations satiriques de la misère : Le cas du Gil Blas illustré, entre pathétique et rejet »',
+    journal: 'in Alain BONNET, Natacha COQUERY (dir.), Les marchés de la misère, XVIIᵉ-XXIᵉ siècle',
+    number: 'Actes du colloque de Lyon',
+    publisher: 'Paris, Mare et Martin',
+    pages: 'pp. 62-79',
+    url: 'https://www.mareetmartin.com/livre/les-marches-de-la-misere'
+  },
+  {
+    year: '2021',
+    title: '« L\'imagerie médiatique et populaire de Salammbô »',
+    journal: 'in Sylvain AMIC, Myriame MOREL-DELEDALLE (dir.), Salammbô, fureur ! Passion ! Éléphants !',
+    number: 'Catalogue d\'exposition (Musée des Beaux-Arts de Rouen, Mucem, Musée du Bardo)',
+    publisher: 'Rouen / Marseille',
+    pages: 'pp. 214-215',
+    url: 'https://mucem.org/expositions/salammbo/'
+  },
+  {
+    year: '2019',
+    title: '« Représentations auctoriales dans Excel Saga : rôles, enjeux et métafiction »',
+    journal: 'in Benoît BERTHOU, Sylvie DUCAS, Jessica KOHN, Benjamin CARACO (dir.), Comicalités, « Représenter l\'auteur-e de bande dessinée »',
+    publisher: 'En ligne',
+    url: 'https://doi.org/10.4000/comicalites.3359'
+  },
+  {
+    year: '2018',
+    title: '« Enjeux et évolutions du contrôle des images au XXᵉ siècle : Commission de surveillance et de contrôle des publications destinées à l\'enfance et à l\'adolescence »',
+    journal: 'Cahiers Daumier',
+    number: 'n° 8',
+    publisher: 'Automne 2018',
+    url: 'https://www.amis-daumier.fr/nos-parutions/les-cahiers-daumier/99-cahier-daumier-n-8'
+  },
+  {
+    year: '2018',
+    title: '« Formes et écritures médiatiques et populaires dans la presse satirique illustrée française (1830-1890) »',
+    journal: 'in Will NOONAN, Matthew LEGGETT (dir.), Textes et contextes, « Satire (en) politique - Satire in/and politics »',
+    number: '13-1',
+    publisher: 'En ligne',
+    url: 'https://preo.ube.fr/textesetcontextes/index.php?id=1951'
+  },
+  {
+    year: '2017',
+    title: '« Caricaturer l\'Arabe au XIXᵉ siècle »',
+    journal: 'in Isabelle VEYRAT-MASSON, Yvan GASTAUT (dir.), Le Temps des Médias, « L\'humour et les Arabes »',
+    number: 'n° 27',
+    pages: 'pp. 15-34',
+    url: 'https://shs.cairn.info/revue-le-temps-des-medias-2017-1-page-15?lang=fr'
+  },
+  {
+    year: '2015',
+    title: '« Au-delà de l\'exotisme, la presse satirique et la pacification de l\'Algérie »',
+    journal: 'Ridiculosa, « Quand la peur se dessine avec humour »',
+    number: 'n° 22',
+    pages: 'pp. 35-49',
+    url: 'https://www.eiris.eu/publications-de-leiris/publication-ridiculosa/ridiculosa-n-22-quand-la-peur-se-dessine-avec-humour/'
+  },
+  {
+    year: '2014',
+    title: '« Caricaturer L\'Autre »',
+    journal: 'Histoire de l\'art, « Les Figures de l\'Altérité »',
+    number: 'n° 75',
+    pages: 'pp. 77-85',
+    url: 'https://www.persee.fr/doc/hista_0992-2059_2014_num_75_1_3517'
+  },
+  {
+    year: '2013',
+    title: '« Du frère d\'armes à l\'ennemi intime — Presse illustrée, Grande Guerre et colonies »',
+    journal: 'in Cornelius CROWLEY, Geetha GANAPATHY-DORÉ, Michel NAUMANN, Michel OLINGA (dir.), Images de la décolonisation',
+    publisher: 'Université de Cergy-Pontoise',
+    pages: 'pp. 81-103',
+    url: 'https://hal.science/hal-00821522/file/IMAGES_OF_DECOLONIZATION.pdf'
+  }
+];
+
+const responsabilites = [
+  {
+    period: '2026',
+    role: 'Comité scientifique',
+    description: 'Colloque « Le Corps à l\'épreuve des frontières », Université de La Réunion (4-5 juin 2026).',
+    url: 'https://www.fabula.org/actualites/133613/le-corps-a-l-epreuve-des-frontieres.html'
+  },
+  {
+    period: '2021',
+    role: 'Comité scientifique',
+    description: 'Claire Aslangul-Rallo, Bérénice Zunino (dir.), La presse et ses images. Sources - réseaux - imaginaires - méthodes, Berlin, Peter Lang, 2022.',
+    url: 'https://hal.science/hal-03624121'
+  },
+  {
+    period: '2016 — 2018',
+    role: 'ANR & Commissariat scientifique',
+    description: 'Attaché à l\'équipe HAR (EA 4414) / Labex Les passés dans le présent (« Histoire du rire moderne », dir. Ségolène Le Men et Alain Vaillant). Commissariat et constitution de la base de données pour l\'exposition « La caricature et la violence de l\'histoire » (La Contemporaine).',
+    url: 'http://hirim.sociodb.io/'
+  }
+];
+---
+
+<LayoutMain title="Publications & Recherche | MNEMOPOP Art Studio">
+  <section id="publications" class="space-y-12 py-4">
+    
+    <!-- TITRE DE SECTION -->
+    <div class="border-b border-stone-300 pb-3 flex justify-between items-baseline">
+      <h2 class="text-xl font-serif font-bold text-stone-900">Publications & Travaux</h2>
+      <span class="text-xs font-mono uppercase tracking-widest text-amber-800">Production scientifique</span>
+    </div>
+
+    <!-- OUVRAGE PRINCIPAL -->
+    <div class="space-y-4">
+      <h3 class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold">Monographie</h3>
+      
+      <div class="bg-stone-900 text-stone-100 p-6 md:p-8 border-l-4 border-amber-600 shadow-sm space-y-3">
+        <div class="flex justify-between items-center text-xs font-mono text-amber-400 uppercase tracking-widest">
+          <span>{monographie.publisher}</span>
+          <span>{monographie.year}</span>
+        </div>
+        
+        <h4 class="font-serif text-xl md:text-2xl font-bold leading-snug text-white">
+          {monographie.url ? (
+            <a href={monographie.url} target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors">
+              {monographie.title} <span class="text-xs font-mono text-amber-400">↗</span>
+            </a>
+          ) : (
+            monographie.title
+          )}
+        </h4>
+
+        <p class="text-xs font-mono text-stone-400">
+          Auteur : <span class="text-stone-200">{monographie.authors}</span>
+        </p>
+
+        {monographie.url && (
+          <div class="pt-2">
+            <a href={monographie.url} target="_blank" rel="noopener noreferrer" class="text-xs font-mono text-amber-400 hover:underline uppercase tracking-widest">
+              Consulter la fiche éditeur ↗
+            </a>
+          </div>
+        )}
+      </div>
+    </div>
+
+    <!-- ARTICLES SOUS COMITÉ DE LECTURE -->
+    <div class="space-y-6">
+      <div class="border-b border-stone-200 pb-2 flex justify-between items-baseline">
+        <h3 class="font-serif text-base font-bold text-stone-900">Articles & Contributions (Comité de lecture)</h3>
+        <span class="font-mono text-[10px] text-stone-500 uppercase tracking-widest">{articles.length} publications</span>
+      </div>
+
+      <div class="divide-y divide-stone-200 border-t border-b border-stone-200">
+        {articles.map((item) => (
+          <div class="py-4 space-y-1 hover:bg-stone-50/50 transition-colors px-2">
+            <div class="flex justify-between items-baseline text-xs">
+              <h4 class="font-serif font-bold text-stone-900 text-sm md:text-base leading-snug">
+                {item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" class="hover:text-amber-800 transition-colors">
+                    {item.title} <span class="text-xs font-mono text-amber-800">↗</span>
+                  </a>
+                ) : (
+                  item.title
+                )}
+              </h4>
+              <span class="font-mono text-[11px] text-amber-800 font-semibold shrink-0 ml-4">{item.year}</span>
+            </div>
+            <p class="text-xs text-stone-600 leading-relaxed font-sans">
+              {item.journal}
+              {item.number && <span class="text-stone-400"> — {item.number}</span>}
+              {item.publisher && <span class="text-stone-500">, {item.publisher}</span>}
+              {item.pages && <span class="font-mono text-[10px] text-stone-500"> [{item.pages}]</span>}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- RESPONSABILITÉS SCIENTIFIQUES & PRIX -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-4">
+      
+      <!-- COMMISSAIRIAT & RECHERCHE -->
+      <div class="md:col-span-2 space-y-4">
+        <h3 class="font-serif text-base font-bold text-stone-900 border-b border-stone-200 pb-2">
+          Responsabilités scientifiques & Projets ANR
+        </h3>
+        <div class="space-y-4">
+          {responsabilites.map((resp) => (
+            <div class="bg-stone-50 border border-stone-200 p-4 space-y-1">
+              <div class="flex justify-between items-center text-[10px] font-mono uppercase tracking-widest">
+                <span class="text-amber-800 font-bold">{resp.role}</span>
+                <span class="text-stone-500">{resp.period}</span>
+              </div>
+              <p class="text-xs text-stone-700 leading-relaxed font-sans pt-1">
+                {resp.url ? (
+                  <a href={resp.url} target="_blank" rel="noopener noreferrer" class="hover:text-amber-800 hover:underline">
+                    {resp.description} ↗
+                  </a>
+                ) : (
+                  resp.description
+                )}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+   <!-- PRIX DE THÈSE -->
+      <div class="space-y-4">
+        <h3 class="font-serif text-base font-bold text-stone-900 border-b border-stone-200 pb-2">
+          Distinctions
+        </h3>
+        <div class="bg-white border border-stone-200 p-5 space-y-2">
+          <span class="font-mono text-[10px] text-amber-800 font-bold uppercase tracking-widest block">Décembre 2016</span>
+          <h4 class="font-serif text-sm font-bold text-stone-900 leading-snug">
+            <a 
+              href="http://www.fluxcontinu.umontreal.ca/images/forms/Arts-Sciences-2016.pdf" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="hover:text-amber-800 transition-colors inline-flex items-baseline gap-1 group"
+            >
+              <span class="group-hover:underline">Prix de doctorat</span>
+              <span class="text-xs font-mono text-amber-800 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">↗</span>
+            </a>
+          </h4>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Décerné par les professeurs du Département d'histoire de l'art et d'études cinématographiques de l'Université de Montréal.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BLOC D'APPEL À L'ACTION -->
+    <div class="border border-stone-900 p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 bg-white">
+      <div>
+        <h4 class="font-serif font-bold text-stone-900 text-sm">Besoin d'une expertise scientifique ou d'un conseil éditorial ?</h4>
+        <p class="text-xs text-stone-600 mt-0.5">Le Studio vous accompagne dans la rédaction, la révision critique ou le commissariat d'exposition.</p>
+      </div>
+      <a href="/contacts" class="inline-block bg-stone-900 text-stone-100 text-[11px] font-mono uppercase tracking-widest px-4 py-2 hover:bg-amber-700 transition-colors shrink-0">
+        Prendre contact →
+      </a>
+    </div>
+
+  </section>
+</LayoutMain>

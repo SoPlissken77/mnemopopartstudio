@@ -1,0 +1,108 @@
+---
+import LayoutMain from '../layouts/LayoutMain.astro';
+
+const canaux = [
+  {
+    plateforme: 'Instagram',
+    handle: '@mnemopopartstudio',
+    focus: 'Culture visuelle & Analyses en images',
+    description: 'Carrousels d\'analyse iconographique, détails d\'œuvres méconnues, coulisses des recherches et décodage de la presse satirique.',
+    lien: 'https://www.instagram.com/mnemopopartstudio'
+  },
+  {
+    plateforme: 'X (Twitter)',
+    handle: '@MnemoPop_Art',
+    focus: 'Fil d\'actualité & Veille académique',
+    description: 'Micro-threads d\'histoire de l\'art, réactions à l\'actualité visuelle, annonces de publications et échanges avec la communauté.',
+    lien: 'https://x.com/MnemoPop_Art/'
+  },
+  {
+    plateforme: 'YouTube',
+    handle: '@mnemopop',
+    focus: 'Format long & Essais vidéo',
+    description: 'Analyses approfondies, conférences filmées et décryptages documentés sur l\'histoire de la caricature et des médias.',
+    lien: '#'
+  },
+  {
+    plateforme: 'Threads',
+    handle: '@mnemopop.artstudio',
+    focus: 'Discussions & Notes de recherche',
+    description: 'Format texte court, réflexions spontanées sur la culture populaire et échanges informels autour de nos sujets d\'étude.',
+    lien: 'https://www.threads.com/@mnemopop_art_studio'
+  },
+  {
+    plateforme: 'TikTok',
+    handle: '@mnemopop.art',
+    focus: 'Format court & Pédagogie visuelle',
+    description: 'Vidéos courtes et dynamiques de décodage d\'images, anecdotes historiques et vulgarisation auprès d\'un public élargi.',
+    lien: 'https://www.tiktok.com/@mnemopop.art.stud?is_from_webapp=1&sender_device=pc'
+  }
+];
+---
+
+<LayoutMain title="Réseaux sociaux & Diffusion | MNEMOPOP Art Studio">
+  <section id="reseaux" class="space-y-12 py-4">
+    
+    <!-- TITRE DE SECTION -->
+    <div class="border-b border-stone-300 pb-3 flex justify-between items-baseline">
+      <h2 class="text-xl font-serif font-bold text-stone-900">Réseaux sociaux</h2>
+      <span class="text-xs font-mono uppercase tracking-widest text-amber-800">Diffusion & Visibilité</span>
+    </div>
+
+    <!-- INTRODUCTION -->
+    <p class="text-sm text-stone-700 leading-relaxed font-sans max-w-3xl">
+      Suivez la production de <span class="font-bifur text-xs text-stone-900 uppercase tracking-wider">MNEMOPOP</span> 
+      <span class="font-serif italic text-amber-800 text-sm">Art Studio</span> 
+      au quotidien. Nous y partageons des décodages d'images, des analyses d'archives et des formats pédagogiques pour faire vivre l'histoire de la culture visuelle.
+    </p>
+
+    <!-- GRILLE DES RÉSEAUX SOCIAUX -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {canaux.map((item) => (
+        <div class="bg-white border border-stone-200 p-6 flex flex-col justify-between hover:border-amber-600/50 transition-colors space-y-4">
+          <div class="space-y-2">
+            <div class="flex justify-between items-center border-b border-stone-100 pb-2">
+              <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold">{item.focus}</span>
+            </div>
+            
+            <div>
+              <h3 class="font-serif text-lg font-bold text-stone-900 leading-snug">
+                {item.plateforme}
+              </h3>
+              <p class="text-[11px] font-mono text-stone-400 mt-0.5">
+                {item.handle}
+              </p>
+            </div>
+
+            <p class="text-xs text-stone-600 leading-relaxed pt-1">
+              {item.description}
+            </p>
+          </div>
+
+          <div>
+            <a 
+              href={item.lien} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="inline-block border border-stone-900 text-stone-900 text-[10px] font-mono uppercase tracking-widest px-3 py-1.5 hover:bg-stone-900 hover:text-white transition-colors w-full text-center"
+            >
+              Suivre sur {item.plateforme} →
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- CALL TO ACTION / STRATÉGIE -->
+    <div class="bg-stone-50 border border-stone-200 p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+      <div>
+        <h4 class="font-serif font-bold text-stone-900 text-sm">Collaboration ou projet de création de contenu ?</h4>
+        <p class="text-xs text-stone-600 mt-0.5">Nous concevons également des formats de vulgarisation et des séries vidéo sur mesure pour des tiers.</p>
+      </div>
+      <a href="/contacts" class="inline-block bg-stone-900 text-stone-100 text-[11px] font-mono uppercase tracking-widest px-4 py-2 hover:bg-amber-700 transition-colors shrink-0">
+        Nous contacter →
+      </a>
+    </div>
+
+  </section>
+</LayoutMain>

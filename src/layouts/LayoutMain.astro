@@ -1,0 +1,158 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title = "MNEMOPOP Art Studio | Cabinet d'expertise & Histoire de l'art" } = Astro.props;
+
+const navLinks = [
+  { href: '/objectifs', label: 'Objectifs' },
+  { href: '/services', label: 'Services' },
+  { href: '/studio', label: 'Qui nous sommes ?' },
+  { href: '/publications', label: 'Publications' },
+  { href: '/reseaux', label: 'Réseaux' },
+  { href: '/contacts', label: 'Contacts' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth bg-stone-100 text-stone-900 antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    <!-- SEO & Métadonnées -->
+    <meta name="description" content="MNEMOPOP Art Studio — Cabinet d'expertise en histoire de l'art contemporain, étude des médias, culture visuelle et presse satirique." />
+    <meta name="author" content="Sofiane Taouchichet" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Cabinet d'expertise en histoire de l'art, culture visuelle et valorisation de la presse satirique." />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  </head>
+  <body class="min-h-screen flex flex-col font-sans selection:bg-amber-800 selection:text-white">
+    
+    <!-- HEADER INSTITUTIONNEL -->
+    <header class="bg-stone-900 text-stone-100 border-b-2 border-amber-600 sticky top-0 z-50 shadow-md">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-20">
+          
+          <!-- BRANDING (BIFUR + CORMORANT) -->
+          <a href="/" class="group flex flex-col justify-center">
+            <span class="font-bifur text-xl sm:text-2xl tracking-widest text-white group-hover:text-amber-400 transition-colors uppercase">
+              MNEMOPOP
+            </span>
+            <span class="font-serif italic text-xs sm:text-sm text-amber-500 font-normal -mt-1 tracking-wide">
+              Art Studio
+            </span>
+          </a>
+
+          <!-- NAVIGATION DESKTOP -->
+          <nav class="hidden md:flex items-center space-x-6 text-xs font-mono tracking-widest uppercase">
+            {navLinks.map((link) => (
+              <a
+                href={link.href}
+                class="relative py-2 text-stone-300 hover:text-amber-400 transition-colors after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-amber-500 hover:after:w-full after:transition-all after:duration-200"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          <!-- BOUTON MENU MOBILE -->
+          <div class="md:hidden flex items-center">
+            <button
+              id="menu-btn"
+              type="button"
+              class="text-stone-300 hover:text-white focus:outline-none"
+              aria-label="Ouvrir le menu"
+            >
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MENU MOBILE PANNEAU DÉROULANT -->
+      <div id="mobile-menu" class="hidden md:hidden bg-stone-950 border-b border-stone-800 px-4 pt-2 pb-4 space-y-2 text-xs font-mono uppercase tracking-widest">
+        {navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="block py-2 text-stone-300 hover:text-amber-400 hover:bg-stone-900 px-3 rounded transition-colors"
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+    </header>
+
+    <!-- CONTENU PRINCIPAL -->
+    <main class="flex-grow max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <slot />
+    </main>
+
+    <!-- PIED DE PAGE -->
+    <footer class="bg-stone-900 text-stone-400 border-t border-stone-800 text-xs font-mono py-8 mt-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div>
+          <span class="font-bifur text-stone-200 text-sm tracking-wider uppercase">MNEMOPOP</span> 
+          <span class="font-serif italic text-amber-500 text-xs mr-2">Art Studio</span> 
+          <span class="text-stone-500">© 2026 — Tous droits réservés</span>
+        </div>
+        <div class="flex space-x-6 text-[11px] uppercase tracking-wider text-stone-400">
+          <a href="/contacts" class="hover:text-amber-400 transition-colors">Mentions légales</a>
+          <a href="/contacts" class="hover:text-amber-400 transition-colors">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
+      const btn = document.getElementById('menu-btn');
+      const menu = document.getElementById('mobile-menu');
+
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
+
+<!-- CSS GLOBAL & CHARGEMENT DE LA POLICE BIFUR -->
+<style is:global>
+  @font-face {
+    font-family: 'BifurCustom';
+    src: url('/fonts/Bifur.woff2') format('woff2'),
+         url('/fonts/Bifur.woff') format('woff'),
+         url('/fonts/Bifur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  .font-bifur {
+    font-family: 'BifurCustom', 'Cormorant Garamond', Georgia, serif !important;
+  }
+
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4 {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  p {
+    hyphens: auto;
+  }
+</style>
