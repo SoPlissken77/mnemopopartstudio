@@ -34,8 +34,7 @@ import LayoutMain from '../layouts/LayoutMain.astro';
         <div class="space-y-3 pt-2 border-t border-stone-200">
           <div>
             <span class="font-mono text-[10px] uppercase tracking-widest text-amber-800 font-bold block mb-1">Localisation</span>
-            <p class="font-mono text-stone-800">Strasbourg, France
-</p>
+            <p class="font-mono text-stone-800">Strasbourg, France</p>
           </div>
 
           <div>
@@ -67,7 +66,21 @@ import LayoutMain from '../layouts/LayoutMain.astro';
           Transmettre une demande
         </h3>
 
-        <form action="#" method="POST" class="space-y-5 text-xs">
+        <form 
+          name="contact" 
+          method="POST" 
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          action="/contacts"
+          class="space-y-5 text-xs"
+        >
+          <!-- Champ caché obligatoire pour que Netlify détecte le formulaire -->
+          <input type="hidden" name="form-name" value="contact" />
+          <!-- Anti-spam (facultatif mais recommandé) -->
+          <p class="hidden">
+            <label>Ne pas remplir si vous êtes humain : <input name="bot-field" /></label>
+          </p>
+
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="space-y-1">
               <label for="nom" class="font-mono text-[10px] uppercase tracking-widest text-stone-600 font-bold">
@@ -146,33 +159,7 @@ import LayoutMain from '../layouts/LayoutMain.astro';
           >
             Envoyer le message →
           </button>
-        <form 
-  name="contact" 
-  method="POST" 
-  data-netlify="true"
-  action="/contacts"
->
-  <!-- 1. CHAMP CACHÉ OBLIGATOIRE (Ne pas oublier !) -->
-  <input type="hidden" name="form-name" value="contact" />
-
-  <!-- 2. CHAQUE CHAMP DOIT AVOIR UN ATTRIBUT "name" -->
-  <div>
-    <label for="nom">Nom</label>
-    <input type="text" id="nom" name="nom" required />
-  </div>
-
-  <div>
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required />
-  </div>
-
-  <div>
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required></textarea>
-  </div>
-
-  <button type="submit">Envoyer</button>
-</form>
+        </form>
       </div>
 
     </div>
