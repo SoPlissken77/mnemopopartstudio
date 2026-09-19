@@ -146,19 +146,19 @@ import LayoutMain from '../layouts/LayoutMain.astro';
           >
             Envoyer le message →
           </button>
-        </form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        action="/contacts"
-        >
-        <!-- Champ caché obligatoire pour Netlify -->
+        <form 
+  name="contact" 
+  method="POST" 
+  data-netlify="true"
+  action="/contacts"
+>
+  <!-- 1. CHAMP CACHÉ OBLIGATOIRE (Ne pas oublier !) -->
   <input type="hidden" name="form-name" value="contact" />
 
-  <!-- Tes champs existants (Nom, Email, Message, etc.) -->
+  <!-- 2. CHAQUE CHAMP DOIT AVOIR UN ATTRIBUT "name" -->
   <div>
-    <label for="name">Nom</label>
-    <input type="text" id="name" name="name" required />
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" required />
   </div>
 
   <div>
